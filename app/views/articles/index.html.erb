@@ -1,24 +1,16 @@
-<main style="display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  padding: 16px;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-">
-  <h1>Blog App</h1>
+<section class="flex flex-col items-center justify-center	gap-4">
+  <h1>Articles</h1>
 
-  <% if articles_path %>
-    <ul style="list-style: none">
-      <% @articles.each do |article|  %>
-        <li>
-          <span><%= article.title %></span>
-          <p><%= article.body %></p>
 
-        </li>
-      <% end %>
-    </ul>
-    <p>Find me in app/views/articles/index.html.erb</p>
-  <% end %>
-</main>
+  <ul class="shadow h-48 w-48 flex flex-col items-center rounded bg-white">
+    <% @articles.each_with_index do |article, index|  %>
+      <li class="text-gray-500">
+        <%= index + 1 %> -
+        <%= link_to article.title, article %>
+
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Novo Artigo", new_article_path %>
+</section>

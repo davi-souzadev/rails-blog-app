@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-    </style>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-slate-200">
+    <main class="container mx-auto px-5 ">
+        <%= yield %>
+    </main>
   </body>
 </html>
