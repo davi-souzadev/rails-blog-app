@@ -10,3 +10,13 @@
     turbo_confirm: "Voce tem certeza?"
   } %></li>
 </ul>
+
+<h2>Comentários</h2>
+
+<ul>
+  <%= render @article.comments %>
+</ul>
+
+<h2>Adicione um comentário</h2>
+
+<%= render "comments/form" %>

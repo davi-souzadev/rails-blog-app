@@ -1,0 +1,17 @@
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+  <div class="flex flex-col items-center">
+    <p>
+      <%= form.label :commenter %>
+      <%= form.text_field :commenter %>
+    </p>
+
+    <p>
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+<% end %>
